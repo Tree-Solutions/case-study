@@ -12,11 +12,12 @@ The goal is to create a simple web application using **Next.js** with specific f
 ### 2. **Data Display**
 - Fetch metrics data from the **server-side route** located at `src/app/api/metrics/route.ts`.
 - Display the fetched metrics in a **table format** using any table library of your choice, such as [**TanStack Table**](https://tanstack.com/table/latest) x [**Shadcn Data Table**](https://ui.shadcn.com/docs/components/data-table), [**AG Grid**](https://www.ag-grid.com/), or similar alternatives.
-- Example <img width="786" alt="image" src="https://github.com/user-attachments/assets/b62384de-00ac-4822-ad55-7368ba3b22c8">
+![Table Example](https://github.com/user-attachments/assets/236e692a-0a8d-49d0-b124-7329424efa33)
 
 ### 3. **Data Visualization**
 - Create a **chart or graph** to visualize the metrics data.
 - Use a library such as [**Chart.js**](https://www.chartjs.org/docs/latest), [**Shadcn Beautiful Charts**](https://ui.shadcn.com/charts) or any suitable charting tool.
+![Bar Chart Example](https://github.com/user-attachments/assets/0969ad6f-eb8c-4ade-85a9-585d2436d6a0)
 
 ### 4. **Create New Metric Records**
 - Allow users to create new metric records through a simple form.
