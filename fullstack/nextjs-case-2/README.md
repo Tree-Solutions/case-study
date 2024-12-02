@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Test Assignment: Next.js Application
 
-## Getting Started
+## Overview
+The goal is to create a simple web application using **Next.js** with specific features that demonstrate your ability to handle modern web development tools and integrations. This assignment will assess your ability to set up authentication, display and visualize data, and integrate third-party tools.
 
-First, run the development server:
+## Requirements
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 1. **Authentication**
+- Implement user authentication using **Clerk**.
+- Configure authentication to allow login through **Google provider**.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. **Data Display**
+- Fetch metrics data from the **server-side route** located at `src/app/api/metrics/route.ts`.
+- Display the fetched metrics in a **table format** using any table library of your choice, such as [**TanStack Table**](https://tanstack.com/table/latest) x [**Shadcn Data Table**](https://ui.shadcn.com/docs/components/data-table), [**AG Grid**](https://www.ag-grid.com/), or similar alternatives.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. **Data Visualization**
+- Create a **chart or graph** to visualize the metrics data.
+- Use a library such as [**Chart.js**](https://www.chartjs.org/docs/latest), [**Shadcn Beautiful Charts**](https://ui.shadcn.com/charts) or any suitable charting tool.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. **Create New Metric Records**
+- Allow users to create new metric records through a simple form.
+- Submit the form using [**TanStack Query**](https://tanstack.com/query/latest) and update the displayed data dynamically.
+- Implement `POST` route for adding new metrics into local array.
 
-## Learn More
+### 5. **Code Submission**
+- Ensure the repository is well-organized.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deliverables
+- A functional Next.js application meeting the requirements.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Evaluation Criteria
+- Clean and maintainable code.
+- Successful implementation of the specified features.
+- UI/UX quality and responsiveness.
+- Effective use of **TanStack Query** for fetching and mutating data.
+- Proper code documentation.
 
-## Deploy on Vercel
+## Additional Notes
+- The `GET` route for fetching metrics is located at `src/app/api/metrics/route.ts`.
+- The `POST` route for adding new metrics is to be implemented as part of the task.
+- Time expected for the task: 3–5 hours.
+- If any challenges arise, document your assumptions and approach.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Good luck! 🎉
