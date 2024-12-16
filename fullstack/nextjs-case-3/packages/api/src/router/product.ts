@@ -10,6 +10,7 @@ const createProductSchema = z.object({
 export const productRouter = {
   all: publicProcedure.query(({ ctx }) => {
     // return ctx.db.select().from(schema.post).orderBy(desc(schema.post.id));
+    return [];
   }),
 
   byId: publicProcedure
