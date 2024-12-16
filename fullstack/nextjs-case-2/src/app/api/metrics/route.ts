@@ -1,5 +1,6 @@
+import { generateId } from "@/lib/utils";
 import moment from "moment";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 const metrics = [
   {
@@ -27,4 +28,14 @@ const metrics = [
 
 export const GET = async () => {
   return NextResponse.json(metrics);
+};
+
+export const POST = async (req: NextRequest) => {
+  const metric = await req.json();
+
+  const metricWithId = { id: (metrics.at(-1)?.id ?? 0) + 1, ...metric };
+
+  metrics.push(metricWithId);
+
+  return NextResponse.json(metricWithId);
 };
