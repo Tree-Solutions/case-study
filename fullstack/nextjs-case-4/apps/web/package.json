@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@repo/ui": "workspace:*",
+    "@repo/db": "workspace:*",
     "autoprefixer": "^10.4.20",
     "next": "^15.1.0",
     "react": "^19.0.0",

@@ -1,81 +1,117 @@
-# Turborepo starter
+# Fullstack Next.js Case Study
 
-This is an official starter Turborepo.
+We’re excited to see your skills in action! This case study involves building a **CRUD** application for “products” using our **Turborepo** monorepo boilerplate. You’ll work with **Next.js**, **TypeScript**, **SWR**, **Prisma**, **PostgreSQL**, **TailwindCSS**, **shadcn UI**, **zod**/**react-hook-form**, and **Clerk** for authentication. Finally, you’ll deploy your solution to **Vercel**.
 
-## Using this example
+> **Estimated Time to Complete:** ~4–6 hours  
+> **Goal:** Demonstrate your ability to build and deploy a small but polished fullstack application.
 
-Run the following command:
+---
 
-```sh
-npx create-turbo@latest
-```
+## Overview
 
-## What's inside?
+Your task is to **implement a basic product CRUD** (Create, Read, Update, Delete) workflow with a simple sign-in flow using **Clerk**. You’ll need to deploy your final solution to **Vercel**.
 
-This Turborepo includes the following packages/apps:
+---
 
-### Apps and Packages
+## Requirements Breakdown
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+1. **Monorepo & Project Structure**
+   - Use the provided **Turborepo** boilerplate.
+   - **`apps/web`** is your primary Next.js application.
+   - **`packages/ui`** is your UI library that already has some `Button` and `Input` shadcn components. You’re expected to add any additional shadcn components you need for building a polished UI.
+   - **`packages/db`** is a shared library with Prisma.
 
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+2. **Tech Stack**
+   - **Next.js** (React + File-based Routing)
+   - **TypeScript**
+   - **SWR** for data fetching/caching
+   - **Prisma** + **PostgreSQL** for database
+   - **TailwindCSS** + **shadcn UI** (design must look reasonably polished)
+   - **zod** + **react-hook-form** for form validation and handling
+   - **Clerk** for a simple sign-in authentication flow
 
-### Utilities
+3. **Products Module**
+   - **CRUD**: Create, Read, Update, and Delete
+   - **Schema**: You decide the specific fields (e.g., `name`, `price`, `description`, etc.)
+   - **Forms**: Must use **zod** + **react-hook-form** for validation
+   - **UI**:
+     - Display a list of products.
+     - A form above the list to **create** a new product.
+     - Each product item in the list should link to a **detail page** where you can **Edit** or **Delete** the product.
+     - Editing a product should happen on a separate edit page (not inline).
 
-This Turborepo has some additional tools already setup for you:
+4. **Authentication**
+   - Use **Clerk** for a simple **sign-in** flow.
+   - Only signed-in users can access the product CRUD features (public users can be restricted or see a “Please sign in” message).
 
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+5. **Data Fetching**
+   - **SWR** for all API interactions (list products, create, update, delete, fetch details).
 
-### Build
+6. **Deployment**
+   - **Vercel** deployment of the final monorepo.
+   - Share the live URL for demonstration.
 
-To build all apps and packages, run the following command:
+---
 
-```
-cd my-turborepo
-pnpm build
-```
+## Technical Details & Suggestions
 
-### Develop
+1. **Database Setup**
+   - Use **Prisma** with **PostgreSQL**.
+   - Provide a minimal `schema.prisma` for your products in `packages/db`.
+   - Run `prisma migrate` to set up your local or remote DB.
 
-To develop all apps and packages, run the following command:
+2. **API Routes**
+   - Implement all CRUD operations for products in Next.js API routes (e.g., `pages/api/products/[id].ts`, `pages/api/products/index.ts`) **or** in the new App Router style (`app/api/products/[id]/route.ts`).
+   - All reading, creation, updating, deletion calls must be done via **SWR** from the front end.
 
-```
-cd my-turborepo
-pnpm dev
-```
+3. **UI & Components**
+   - You have **TailwindCSS** and **shadcn UI** available to style your pages.
+   - The `packages/ui` library already has basic `Button` and `Input` components.
+   - Add any **shadcn** components you need (e.g., `Card`, `Dialog`, `Form`, etc.) into `packages/ui` for reusability.
+   - Aim for a **reasonably polished UI** (doesn’t have to be production-grade, but should be neat and consistent).
 
-### Remote Caching
+4. **Forms**
+   - Use **react-hook-form** + **zod** for both product creation and editing forms.
+   - Show basic form validation errors (e.g., “Name is required”).
 
-Turborepo can use a technique known as [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+5. **Authentication**
+   - **Clerk** sign-in flow.
+   - Create a Clerk application (free tier) for testing.
+   - Restrict product CRUD routes/pages to authenticated users only.
 
-By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
+6. **Deployment**
+   - Deploy the entire monorepo to **Vercel**.
+   - Provide the live URL in your submission.
 
-```
-cd my-turborepo
-npx turbo login
-```
+7. **What We’re Looking For**
+   - **Clean, well-structured code**.
+   - Proper usage of **React** and **Next.js** concepts.
+   - Correct **SWR** usage for data fetching.
+   - Understanding of **Prisma** and database migrations.
+   - **TypeScript** correctness.
+   - Polished UI that shows familiarity with **TailwindCSS** and **shadcn**.
+   - Correct usage of **zod** + **react-hook-form** for form validation.
+   - A successful **Vercel** deployment.
 
-This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+---
 
-Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your Turborepo:
+## Tips for Success
 
-```
-npx turbo link
-```
+- Keep your code **modular**.  
+- Be mindful of **TypeScript** types.  
+- Maintain a **clean folder structure** in your monorepo.  
+- Use Git commits to show progression if possible (not required but recommended).
 
-## Useful Links
+---
 
-Learn more about the power of Turborepo:
+## Deliverables
 
-- [Tasks](https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks)
-- [Caching](https://turbo.build/repo/docs/core-concepts/caching)
-- [Remote Caching](https://turbo.build/repo/docs/core-concepts/remote-caching)
-- [Filtering](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
-- [Configuration Options](https://turbo.build/repo/docs/reference/configuration)
-- [CLI Usage](https://turbo.build/repo/docs/reference/command-line-reference)
+1. **GitHub Repository** (fork/clone of the provided turborepo boilerplate).
+2. **Working CRUD** for products:
+   - List, Create, Detail, Edit, Delete functionality.
+3. **Clerk** sign-in flow integrated.
+4. **Vercel** deployed link showing the final working product.
+
+---
+
+**Good luck, and thank you for your time!** Feel free to reach out with any questions.
