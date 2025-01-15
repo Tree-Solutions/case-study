@@ -1,8 +1,26 @@
 # Full Stack Middle Developer Case Study
 
-Hello, and thank you for participating in this case study! We're excited to see how you approach building a full-stack application from scratch while showcasing your skills with modern web development tools.
+Hi and thank you for participating in this case study of **Tree Solutions**! We're excited to see how you approach building a full-stack application from scratch while showcasing your skills with modern web development tools.
 
 This case study focuses on building a **multi-step property form** with a **portfolio overview** page that stores and retrieves data from a **PostgreSQL database hosted on Vercel**. Below are the detailed requirements and expectations for this assignment.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Next.js (App Router)**  
+
+- **TypeScript**  
+
+- **Prisma** + **PostgreSQL**  
+
+- **React Hook Form** + **Zod**  
+
+- **React Query**  
+
+- **TailwindCSS** + **Shadcn UI**  
+
+- **Vercel**  
 
 ---
 
@@ -46,7 +64,8 @@ The application consists of:
 - Use **Zod** for validation schemas and display **clear error messages** for invalid inputs.
 
 ### 2. **UI Design**
-- Use components from **Shadcn UI** for the entire interface.
+- Use **Shadcn UI** components for the entire interface.
+- Use **TailwindCSS** for layout and styling.
 - While the provided [Figma design](#) serves as a **reference**, you are not required to match it pixel-perfectly. Focus on creating a clean and functional UI.
 
 ### 3. **Database Integration**
@@ -68,41 +87,25 @@ The application consists of:
 
 ## 🧮 Key Calculations
 
-You must include real-time calculations for the following metrics:
+The following calculations must be implemented for the **Income & Expenses** step and the **Portfolio Overview** page. Ensure these values are computed in real-time where applicable.
 
-1. **(EGI) Effective Gross Income**  
-   \[
-   \text{EGI} = \text{Net Rental} + \text{Retail Income} + \text{Insurance Income} + \text{Misc Additional Income}
-   \]
+1. **Effective Gross Income (EGI)**  
+   `EGI = Net Rental + Retail Income + Insurance Income + Misc Additional Income`
 2. **Total Expenses**  
-   \[
-   \text{Total Expenses} = \text{Property Taxes} + \text{Insurance} + \text{Utilities} + \dots
-   \]
+   `Total Expenses = Property Taxes + Insurance + Utilities + Repairs & Maintenance + Miscellaneous`
 3. **Net Operating Income (NOI)**  
-   \[
-   \text{NOI} = \text{EGI} - \text{Total Expenses}
-   \]
+   `NOI = EGI - Total Expenses`
 4. **Asset Value**  
-   \[
-   \text{Asset Value} = \frac{\text{NOI}}{\text{Cap Rate}}
-   \]
-   - Use a fixed cap rate of 5% (\( \text{Cap Rate} = 0.05 \)).
+   `Asset Value = NOI / Cap Rate`
+   - Use a fixed Cap Rate of 5% (0.05).
 5. **LTV (Loan-to-Value)**  
-   \[
-   \text{LTV} = \Bigl(\frac{\text{Total Debt}}{\text{Asset Value}}\Bigr) \times 100\%
-   \]
+   `LTV (%) = (Total Debt / Asset Value) * 100`
 6. **DSCR (Debt Service Coverage Ratio)**  
-   \[
-   \text{DSCR} = \frac{\text{NOI}}{\text{Annual Debt Service}}
-   \]
+   `DSCR = NOI / Annual Debt Service`
 7. **Rent per sqft**  
-   \[
-   \text{Rent per sqft} = \frac{\text{Net Rental}}{\text{Total Square Footage}}
-   \]
+   `Rent per sqft = Net Rental / Total Square Footage`
 8. **Expense Ratio**  
-   \[
-   \text{Expense Ratio} = \Bigl(\frac{\text{Total Expenses}}{\text{EGI}}\Bigr) \times 100\%
-   \]
+   `Expense Ratio (%) = (Total Expenses / EGI) * 100`
 
 ---
 
@@ -136,11 +139,11 @@ We’ll evaluate your submission based on the following:
    - Properly functioning API routes and integration with React Query.
 
 4. **UI/UX**  
-   - Clean and functional design using Shadcn components.
+   - Clean and functional design using **Shadcn** components and **TailwindCSS**.
    - Smooth user flow with meaningful error messages.
 
 5. **Deployment**  
-   - Fully functional application deployed on Vercel, including database connectivity.
+   - Fully functional application deployed on **Vercel**, including database connectivity.
 
 ---
 
