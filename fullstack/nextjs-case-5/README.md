@@ -1,68 +1,147 @@
-# Full Stack Middle Developer Case Study #5
+# Full Stack Middle Developer Case Study
 
-## Overview
-You are required to create a **multi-step property form** and a final **portfolio overview** using the following tech stack:
-- **Next.js (App Router)**
-- **TypeScript**
-- **Prisma + PostgreSQL** (database hosted on Vercel)
-- **React Query** (mandatory for data fetching and mutations)
-- **React Hook Form + Zod** (mandatory for form handling and validation)
-- **TailwindCSS**
-- **Shadcn UI** components
+Hello, and thank you for participating in this case study! We're excited to see how you approach building a full-stack application from scratch while showcasing your skills with modern web development tools.
 
-## Project Requirements
-1. **Property Details**  
-   - Basic fields (name, address, etc.) using **React Hook Form** and **Zod** for validation.
-
-2. **Rent Roll**  
-   - Display or seed tenant/unit data (pagination optional).
-
-3. **Financing**  
-   - One default “Debt 1” form.
-   - A button to add up to 10 additional debts, each in a new tab.
-
-4. **Income & Expenses**  
-   - **No tabs** on this step.
-   - Real-time calculations for:
-     - (EGI) **Effective Gross Income**
-     - **Total Expenses**
-     - **Net Operating Income (NOI)**
-
-5. **Ownership Structure**  
-   - Three default owners (Name + Ownership %).
-   - A button to add more owners as needed.
-
-After completing all steps, the user should see an **Overview** page listing all properties with calculated metrics (e.g., Asset Value, LTV, DSCR). A [Figma design](#) (link or screenshots) is provided for **reference only**; exact pixel matching is **not** required.
-
-### Key Calculations
-1. **EGI** = Net Rental + Retail Income + Insurance Income + Misc Additional Income  
-2. **Total Expenses** = sum of property taxes, insurance, utilities, etc.  
-3. **NOI** = EGI − Total Expenses  
-4. **Asset Value** = NOI ÷ Cap Rate (e.g., 5%)  
-5. **LTV** = (Total Debt ÷ Asset Value) × 100%  
-6. **DSCR** = NOI ÷ Annual Debt Service  
-7. **Rent per sqft** = Net Rental ÷ Total Square Footage  
-8. **Expense Ratio** = (Total Expenses ÷ EGI) × 100%
-
-## Development & Deployment
-1. **Initialize** a new Next.js (App Router) + TypeScript project.
-2. **Implement** Prisma, connecting to a **Vercel-hosted PostgreSQL** database.  
-3. **Use** React Hook Form + Zod for form handling and validation.  
-4. **Leverage** React Query for data fetching and mutations.  
-5. **Deploy** to Vercel with the correct `DATABASE_URL` in the project’s environment settings.
-
-## Submission
-1. **Deployed Application URL** on Vercel (production environment).  
-2. **Git Repository** link (public or private invite).  
-3. **Time Expectation**: ~6 hours total. No extensive documentation is required.
-
-## Evaluation Criteria
-- **Code Organization & Quality** (TypeScript best practices, project structure)  
-- **Functional Completeness** (all steps, real-time calculations, final overview)  
-- **Database & API Integration** (Prisma + PostgreSQL on Vercel, React Query usage)  
-- **UI/UX** (usage of Shadcn components, coherent flow; not pixel-perfect)  
-- **Deployment** (fully functional on Vercel, database properly connected)
+This case study focuses on building a **multi-step property form** with a **portfolio overview** page that stores and retrieves data from a **PostgreSQL database hosted on Vercel**. Below are the detailed requirements and expectations for this assignment.
 
 ---
 
-**Thank you for your participation.** If you have any questions or encounter technical issues, please contact us. We look forward to reviewing your submission!
+## 📋 What You'll Be Building
+
+The application consists of:
+
+1. **A Multi-Step Wizard**:
+   - **Step 1: Property Details**  
+     - Collect basic property information like name, address, and close date.
+     - Validation should include error messages (e.g., required fields, invalid formats).
+   - **Step 2: Rent Roll**  
+     - Display or seed data for tenants/units.
+     - Provide an interface to browse this data (pagination optional).
+   - **Step 3: Financing**  
+     - Start with a single "Debt 1" form, and allow users to add up to 10 additional debts using tabs.
+     - Each tab should have its own fields (e.g., lender name, loan amount, interest rate).
+   - **Step 4: Income & Expenses**  
+     - Input fields for incomes and expenses (e.g., net rental, utilities, property taxes).
+     - **Real-time calculations** for:
+       - **(EGI)** Effective Gross Income
+       - **Total Expenses**
+       - **Net Operating Income (NOI)**
+   - **Step 5: Ownership Structure**  
+     - Default three owners (Name + Ownership Percentage) with validation.
+     - Allow adding additional owners dynamically.
+
+2. **A Portfolio Overview Page**:
+   - Displays all properties submitted through the wizard in a clean, card-based layout.
+   - Each card should include:
+     - Property Name and Address
+     - Key financial metrics (e.g., Asset Value, LTV, DSCR, NOI, Rent per sqft, Expense Ratio)
+     - Summary information for easy review.
+
+---
+
+## 🛠️ Requirements
+
+### 1. **Form Handling**
+- Use **React Hook Form** for form management and state handling.
+- Use **Zod** for validation schemas and display **clear error messages** for invalid inputs.
+
+### 2. **UI Design**
+- Use components from **Shadcn UI** for the entire interface.
+- While the provided [Figma design](#) serves as a **reference**, you are not required to match it pixel-perfectly. Focus on creating a clean and functional UI.
+
+### 3. **Database Integration**
+- Use **Prisma** to define schemas and manage data for all steps of the wizard.
+- Store data in a **PostgreSQL database hosted on Vercel**.
+- Ensure the schema supports:
+  - Properties with related data for financing, rent rolls, and ownership.
+  - Financial metrics like expenses and income.
+
+### 4. **Backend & API**
+- Build backend API routes using **Next.js**.
+- Use **React Query** to fetch and mutate data between the frontend and backend.
+
+### 5. **Deployment**
+- Deploy the application to **Vercel**.
+- Use Vercel’s PostgreSQL for the production database and set the appropriate `DATABASE_URL` environment variable.
+
+---
+
+## 🧮 Key Calculations
+
+You must include real-time calculations for the following metrics:
+
+1. **(EGI) Effective Gross Income**  
+   \[
+   \text{EGI} = \text{Net Rental} + \text{Retail Income} + \text{Insurance Income} + \text{Misc Additional Income}
+   \]
+2. **Total Expenses**  
+   \[
+   \text{Total Expenses} = \text{Property Taxes} + \text{Insurance} + \text{Utilities} + \dots
+   \]
+3. **Net Operating Income (NOI)**  
+   \[
+   \text{NOI} = \text{EGI} - \text{Total Expenses}
+   \]
+4. **Asset Value**  
+   \[
+   \text{Asset Value} = \frac{\text{NOI}}{\text{Cap Rate}}
+   \]
+   - Use a fixed cap rate of 5% (\( \text{Cap Rate} = 0.05 \)).
+5. **LTV (Loan-to-Value)**  
+   \[
+   \text{LTV} = \Bigl(\frac{\text{Total Debt}}{\text{Asset Value}}\Bigr) \times 100\%
+   \]
+6. **DSCR (Debt Service Coverage Ratio)**  
+   \[
+   \text{DSCR} = \frac{\text{NOI}}{\text{Annual Debt Service}}
+   \]
+7. **Rent per sqft**  
+   \[
+   \text{Rent per sqft} = \frac{\text{Net Rental}}{\text{Total Square Footage}}
+   \]
+8. **Expense Ratio**  
+   \[
+   \text{Expense Ratio} = \Bigl(\frac{\text{Total Expenses}}{\text{EGI}}\Bigr) \times 100\%
+   \]
+
+---
+
+## 🚀 Submission Instructions
+
+1. **Deploy the App**  
+   - Deploy your app to **Vercel** with a working PostgreSQL database.
+
+2. **Provide the Following**:
+   - **Deployed Application URL** on Vercel.
+   - **Git Repository Link** (public or private invite).
+
+3. **Time Expectation**:  
+   - The assignment is designed to take **up to 6 hours**. Work at your own pace and ensure the essential features are completed.
+
+---
+
+## 📝 Evaluation Criteria
+
+We’ll evaluate your submission based on the following:
+
+1. **Code Quality**  
+   - Proper TypeScript usage, clean organization, and maintainability.
+
+2. **Functional Completeness**  
+   - All five steps of the wizard with proper validations and error handling.
+   - Accurate implementation of real-time calculations.
+
+3. **Database & API**  
+   - Well-structured Prisma schemas and efficient use of PostgreSQL.
+   - Properly functioning API routes and integration with React Query.
+
+4. **UI/UX**  
+   - Clean and functional design using Shadcn components.
+   - Smooth user flow with meaningful error messages.
+
+5. **Deployment**  
+   - Fully functional application deployed on Vercel, including database connectivity.
+
+---
+
+Thank you for participating! If you have any questions, don’t hesitate to reach out. We’re looking forward to seeing what you build! 🚀
