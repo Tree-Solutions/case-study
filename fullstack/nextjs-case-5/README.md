@@ -66,7 +66,7 @@ The application consists of:
 ### 2. **UI Design**
 - Use **Shadcn UI** components for the entire interface.
 - Use **TailwindCSS** for layout and styling.
-- While the provided [Figma design](#) serves as a **reference**, you are not required to match it pixel-perfectly. Focus on creating a clean and functional UI.
+- While the provided [Figma design](https://www.figma.com/design/ihr175BRpZX3eX7K3YhFdG/Test_Test-Tree_Solutions?node-id=1-10264&t=SzdtaG3HiD6Xt8V7-4) serves as a **reference**, you are not required to match it pixel-perfectly. Focus on creating a clean and functional UI.
 
 ### 3. **Database Integration**
 - Use **Prisma** to define schemas and manage data for all steps of the wizard.
@@ -144,6 +144,13 @@ We’ll evaluate your submission based on the following:
 
 5. **Deployment**  
    - Fully functional application deployed on **Vercel**, including database connectivity.
+
+---
+
+## 🔗 Resources
+
+- [Figma Design Reference](https://www.figma.com/design/ihr175BRpZX3eX7K3YhFdG/Test_Test-Tree_Solutions?node-id=1-10264&t=SzdtaG3HiD6Xt8V7-4)  
+  Use this as a guide for layout and structure, but pixel-perfect implementation is not required.
 
 ---
 
